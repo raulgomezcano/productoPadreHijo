@@ -1,0 +1,18 @@
+ID: <input type="text" name="id" [(ngModel)]="id">
+<br>
+Nombre: <input type="text" name="nombre" [(ngModel)]="nombre">
+<br>
+Cantidad: <input type="number" name="cantidad" [(ngModel)]="cantidad">
+<br>
+Precio: <input type="number" name="precio" [(ngModel)]="precio">
+<br>
+Tipo de producto:
+<select name="tipo" [(ngModel)]="tipo">
+    <option value="bebida">Bebida</option>
+    <option value="alimento">Alimento</option>
+    <option value="perecedero">Perecedero</option>
+    <option value="condimento">Condimento</option>
+    <option value="limpieza">Limpieza</option>
+</select>
+<button (click)="agregarProducto()">Agregar producto</button>
+<app-hijo *ngFor="let producto of listaProductos;let i=index" [productoLista]="producto" [indice]="i"></app-hijo>
